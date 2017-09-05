@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>It's A Date!</title>
+	<script src="./js/handlebars.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="introData"></div>
+
+	<script type="text/javascript">
+		var myInfo = "<p>It's A Date is a website used to determine which type of date and activity you would like to participate in. In anticipation of an event, or just not sure what to do, with who or whom, or where to go, we will help you out! Using this application is simple! You simply select which type of date you would like to go on and from their we gather your data and provide feedback. All you have to do is kick back, click clack, and boom, it's all done!</p>";
+
+		var template = Handlebars.compile(myInfo);
+
+		var data = template({ });
+		document.getElementById("introData").innerHTML += data;
+
+		</script>
+
+		<div id="choiceData"></div>
+
+	<script id="choice-template" type="text/x-handlbars-template">
+
+		<h3>Pick Your Date! </h3>
+		
+
+		<ul>
+  			<li><button class="romantic" onClick="reply_click(this.id)">Romantic</button></li>
+  			<li><button class="fun" onClick="reply_click(this.id)">Fun</button></li>
+  			<li><button class="Idate" onClick="reply_click(this.id)">IDate</button></li>
+  			<li><button class="family" onClick="reply_click(this.id)">Family</button></li>
+		</ul>
+
+
+
+		</script>
+
+		<script type="text/javascript">
+	
+		var quoteInfo = document.getElementById("choice-template").innerHTML;
+
+		var template = Handlebars.compile(quoteInfo);
+
+		
+
+		var choiceData = template({
+			Dates: "The classes are Romantic, Fun, IDate, and Family. Make your choice below please.",
+			choices: [
+			{choice: "Romantic Date"},
+			{choice: "Fun Date"},
+			{choice: "IDate"},
+			{choice: "Family Date"}
+			],
+			
+		});
+		Handlebars.registerHelper("agree_buttons", function(){
+			var choice = Handlebars.escapeExpression(this.choice);
+
+			 return new Handlebars.SafeString(
+    			"<button>" + name + "</button>"
+  			);
+		});
+
+		$( document ).ready(function(){
+		$(document).on("click", function(){
+			if("buttons.romantic" === "romantic"){
+				console.log("romantic");
+			}else if("<buttons class>" === "fun"){
+				console.log("damn");
+		}
+			});
+		
+
+		});
+
+				function reply_click(clicked_id)
+{
+    console.log(clicked_id);
+}
+
+		document.getElementById("choiceData").innerHTML += choiceData;
+		
+	</script>
+
+	<div id="text">
+		<p><i>Based on our algorithms we will provide data which will or will not be used or useful to your particular situation, however we strive for success here and hope you continue to enjoy our application and use it for your activities!<i><p>
+	</div>
+
+	</script>
+
+	
+  
+</body>
+</html>
