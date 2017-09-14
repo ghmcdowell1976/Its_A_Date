@@ -1,0 +1,30 @@
+{
+  "name": "itsadate",
+  "version": "1.0.0",
+  "description": "Application that suggests the \"perfect date\" based on user login",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "inquirer": "^3.2.3",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.2",
+    "path": "^0.12.7",
+    "sequelize": "^4.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghmcdowell1976/Its_A_Date.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghmcdowell1976/Its_A_Date/issues"
+  },
+  "homepage": "https://github.com/ghmcdowell1976/Its_A_Date#readme"
+}
